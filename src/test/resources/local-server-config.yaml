@@ -1,0 +1,20 @@
+server:
+  port: 9000
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/randomuser
+    username: randomuser
+    password: mysecretpassword
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format-sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    show-sql: true
+
+  # Hibernate ddl auto (create, create-drop, validate, update)
+spring.jpa.hibernate.ddl-auto: update
