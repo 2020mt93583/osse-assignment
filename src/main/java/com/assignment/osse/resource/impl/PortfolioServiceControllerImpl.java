@@ -16,10 +16,6 @@ import com.assignment.osse.repo.PortfolioRepository;
 import com.assignment.osse.service.dto.Portfolio;
 
 public class PortfolioServiceControllerImpl {
-
-	@RestController
-	public class PortfolioserviceController {
-
 		@Autowired
 		private PortfolioRepository repo;
 		
@@ -38,5 +34,20 @@ public class PortfolioServiceControllerImpl {
 			});
 			return stocks;
 		}
-	}
+		
+		@GetMapping("/mutualfund/{name}")
+		public Map<String, Double> getMutualFund(@PathVariable String name) {
+			List<MutualFund> fund = new ArrayList<>();
+			Map<String, Double> stocks = new HashMap<>();
+			fund = repo.findAllByFundName(name);
+			fund.forEach(f -> {
+				Map<String, String> uriVariables = new HashMap<>();
+				uriVariables.put("ticker", f.getStockTicker());
+				ResponseEntity<Stock> responseEntity = new RestTemplate()
+						.getForEntity("http://localhost:8002/stock/{ticker}", Stock.class, uriVariables);
+				Stock s = responseEntity.getBody();
+				stocks.put(f.getStockTicker(), f.getStockPercentage()/(s.getStockPrice()*100));
+			});
+			return stocks;
+		}
 }
