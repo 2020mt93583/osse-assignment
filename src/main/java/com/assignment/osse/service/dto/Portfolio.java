@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "portfolio")
@@ -11,6 +12,7 @@ public class Portfolio {
 	
 	@Id
 	@Column(name = "id")
+	@NotNull
 	private int id;
 	@Column(name = "portfolio_name")
 	private String portFolioName;
