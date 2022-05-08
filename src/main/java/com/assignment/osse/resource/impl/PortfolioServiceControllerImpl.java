@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.assignment.osse.repo.PortfolioRepository;
+import com.assignment.osse.service.dto.MutualFund;
 import com.assignment.osse.service.dto.Portfolio;
+import com.assignment.osse.service.dto.Stock;
 
 public class PortfolioServiceControllerImpl {
 		@Autowired
