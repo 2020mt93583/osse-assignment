@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(to right, #f7f8f8, #acbb78);
+}
+
+.container {
+    padding: 20px;
+}
+
+.name {
+    color: rgb(35, 194, 101);
+    font-family: 'Noto Serif', serif;
+    padding-top: 30px;
+    text-align: left;
+    font-style: normal;
+    font-size: 44px;
+    text-decoration: none;
+    text-shadow: 3px 3px 3px #666;
+}
+
+.heading {
+    color: rgb(40, 219, 115);
+    font-style: italic;
+    text-decoration: underline;
+    font-size: 26px;
+    text-align: left;
+    padding: 30px 0 10px;
+}
+
+.text {
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: left;
+}
+
+.block {
+    padding: 10px 0;
+}
+
+a {
+    color: #00F;
+    text-decoration: none;
+}
+
+.subHeading {
+    color: black;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.designation {
+    font-size: 16px;
+    padding-top: 10px;
+    text-align: left;
+}
+
+.icons {
+    display: flex;
+    padding-right: 10px;
+}
+
+.image {
+    width: 64px;
+    display: inline-block;
+}
+
+.image-gmail {
+    padding-top: 15px;
+    width: 32px;
+}
